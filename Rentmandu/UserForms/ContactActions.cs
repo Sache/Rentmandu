@@ -17,7 +17,7 @@ namespace Rentmandu.UserForms
             InitializeComponent();
         }
 
-        private void createBtn_Click(object sender, EventArgs e)
+        private void contactSaveBtn_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(nameTbx.Text) && string.IsNullOrEmpty(phoneTbx.Text) 
                 && string.IsNullOrEmpty(landlineTbx.Text) && string.IsNullOrEmpty(emailTbx.Text)
@@ -27,8 +27,17 @@ namespace Rentmandu.UserForms
             }
             else
             {
-                MessageBox.Show(db.Instance.AddContact( //  Create New Contact Profile
-                    nameTbx.Text, Convert.ToInt64(phoneTbx.Text), Convert.ToInt64(landlineTbx.Text), emailTbx.Text, Convert.ToInt64(citizenNoTbx.Text), issueDistrictTbx.Text, dateTimePicker1.Value.Date.ToString("dd/MM/yyyy")));
+                string action = this.Tag.ToString();
+                if (action == "Create")
+                { //  Create New Contact Profile
+                    MessageBox.Show(db.Instance.AddContact( 
+                        nameTbx.Text, Convert.ToInt64(phoneTbx.Text), Convert.ToInt64(landlineTbx.Text), emailTbx.Text, Convert.ToInt64(citizenNoTbx.Text), issueDistrictTbx.Text, dateTimePicker1.Value.Date.ToString("dd/MM/yyyy")));
+                }
+                else if (action == "Edit")
+                {
+                    
+                }
+
             }
            
         }

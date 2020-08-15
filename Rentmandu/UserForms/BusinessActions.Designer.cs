@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.saveBtn = new System.Windows.Forms.Button();
             this.landlineTbx = new System.Windows.Forms.TextBox();
-            this.createBtn = new System.Windows.Forms.Button();
+            this.businessSaveBtn = new System.Windows.Forms.Button();
             this.emailTbx = new System.Windows.Forms.TextBox();
             this.mobileTbx = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -39,21 +38,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.nameTbx = new System.Windows.Forms.TextBox();
             this.contactActionsGrpBx = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.bussTypeTbx = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panNumberTbx = new System.Windows.Forms.TextBox();
-            this.bussTypeTbx = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.contactActionsGrpBx.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // saveBtn
-            // 
-            this.saveBtn.Location = new System.Drawing.Point(366, 6);
-            this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(75, 23);
-            this.saveBtn.TabIndex = 32;
-            this.saveBtn.Text = "Save";
-            this.saveBtn.UseVisualStyleBackColor = true;
             // 
             // landlineTbx
             // 
@@ -63,15 +53,15 @@
             this.landlineTbx.TabIndex = 27;
             this.landlineTbx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumbersOnly_KeyPress);
             // 
-            // createBtn
+            // businessSaveBtn
             // 
-            this.createBtn.Location = new System.Drawing.Point(218, 308);
-            this.createBtn.Name = "createBtn";
-            this.createBtn.Size = new System.Drawing.Size(75, 23);
-            this.createBtn.TabIndex = 15;
-            this.createBtn.Text = "Create";
-            this.createBtn.UseVisualStyleBackColor = true;
-            this.createBtn.Click += new System.EventHandler(this.createBtn_Click);
+            this.businessSaveBtn.Location = new System.Drawing.Point(162, 287);
+            this.businessSaveBtn.Name = "businessSaveBtn";
+            this.businessSaveBtn.Size = new System.Drawing.Size(75, 23);
+            this.businessSaveBtn.TabIndex = 15;
+            this.businessSaveBtn.Text = "Save";
+            this.businessSaveBtn.UseVisualStyleBackColor = true;
+            this.businessSaveBtn.Click += new System.EventHandler(this.businessSaveBtn_Click);
             // 
             // emailTbx
             // 
@@ -137,7 +127,7 @@
             this.contactActionsGrpBx.Controls.Add(this.bussTypeTbx);
             this.contactActionsGrpBx.Controls.Add(this.label3);
             this.contactActionsGrpBx.Controls.Add(this.panNumberTbx);
-            this.contactActionsGrpBx.Controls.Add(this.createBtn);
+            this.contactActionsGrpBx.Controls.Add(this.businessSaveBtn);
             this.contactActionsGrpBx.Controls.Add(this.landlineTbx);
             this.contactActionsGrpBx.Controls.Add(this.nameTbx);
             this.contactActionsGrpBx.Controls.Add(this.label1);
@@ -146,12 +136,28 @@
             this.contactActionsGrpBx.Controls.Add(this.mobileTbx);
             this.contactActionsGrpBx.Controls.Add(this.label7);
             this.contactActionsGrpBx.Controls.Add(this.label6);
-            this.contactActionsGrpBx.Location = new System.Drawing.Point(12, 35);
+            this.contactActionsGrpBx.Location = new System.Drawing.Point(12, 12);
             this.contactActionsGrpBx.Name = "contactActionsGrpBx";
-            this.contactActionsGrpBx.Size = new System.Drawing.Size(429, 369);
+            this.contactActionsGrpBx.Size = new System.Drawing.Size(429, 345);
             this.contactActionsGrpBx.TabIndex = 34;
             this.contactActionsGrpBx.TabStop = false;
             this.contactActionsGrpBx.Text = "Business Form";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(101, 73);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 17);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "TYPE: ";
+            // 
+            // bussTypeTbx
+            // 
+            this.bussTypeTbx.Location = new System.Drawing.Point(162, 70);
+            this.bussTypeTbx.Name = "bussTypeTbx";
+            this.bussTypeTbx.Size = new System.Drawing.Size(225, 22);
+            this.bussTypeTbx.TabIndex = 32;
             // 
             // label3
             // 
@@ -170,28 +176,11 @@
             this.panNumberTbx.TabIndex = 30;
             this.panNumberTbx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumbersOnly_KeyPress);
             // 
-            // bussTypeTbx
-            // 
-            this.bussTypeTbx.Location = new System.Drawing.Point(162, 70);
-            this.bussTypeTbx.Name = "bussTypeTbx";
-            this.bussTypeTbx.Size = new System.Drawing.Size(225, 22);
-            this.bussTypeTbx.TabIndex = 32;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(101, 73);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 17);
-            this.label4.TabIndex = 33;
-            this.label4.Text = "TYPE: ";
-            // 
             // BusinessActions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(467, 414);
-            this.Controls.Add(this.saveBtn);
+            this.ClientSize = new System.Drawing.Size(467, 369);
             this.Controls.Add(this.contactActionsGrpBx);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -205,10 +194,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.TextBox landlineTbx;
-        private System.Windows.Forms.Button createBtn;
+        private System.Windows.Forms.Button businessSaveBtn;
         private System.Windows.Forms.TextBox emailTbx;
         private System.Windows.Forms.TextBox mobileTbx;
         private System.Windows.Forms.Label label7;

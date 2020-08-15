@@ -24,15 +24,32 @@ namespace Rentmandu.UserControls
         private void addBusinessBtn_Click(object sender, EventArgs e)
         {
             BusinessActions businessOP = new BusinessActions();
+            businessOP.Text = "Create";
             businessOP.ShowDialog();
         }
 
         private void addContactBtn_Click(object sender, EventArgs e)
         {
             ContactActions contactOP = new ContactActions();
+            contactOP.Text = "Create";
             contactOP.ShowDialog();        
         }
 
+        private void contactsEditBtn_Click(object sender, EventArgs e)
+        {
+            ContactActions contactOP = new ContactActions();
+            contactOP.Text = "Edit";
+            contactOP.Tag = contactID.Text;
+            contactOP.ShowDialog();
+        }
+
+        private void businessEditBtn_Click(object sender, EventArgs e)
+        {
+            BusinessActions businessOP = new BusinessActions();
+            businessOP.Text = "Edit";
+            businessOP.Tag = businessNumber.Text;
+            businessOP.ShowDialog();
+        }
         private void GetContactsData()
         {
             using (DataTable contactdt = db.Instance.PopulateContactsGridView())
@@ -79,5 +96,7 @@ namespace Rentmandu.UserControls
             businessEmail.Text = test.Cells[5].Value.ToString();
             PANNumber.Text = test.Cells[6].Value.ToString();
         }
+
+
     }
 }

@@ -41,8 +41,7 @@
             this.emailTbx = new System.Windows.Forms.TextBox();
             this.citizenNoTbx = new System.Windows.Forms.TextBox();
             this.issueDistrictTbx = new System.Windows.Forms.TextBox();
-            this.createBtn = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.contactSaveBtn = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.contactActionsGrpBx = new System.Windows.Forms.GroupBox();
             this.contactActionsGrpBx.SuspendLayout();
@@ -50,7 +49,7 @@
             // 
             // nameTbx
             // 
-            this.nameTbx.Location = new System.Drawing.Point(201, 76);
+            this.nameTbx.Location = new System.Drawing.Point(201, 35);
             this.nameTbx.Name = "nameTbx";
             this.nameTbx.Size = new System.Drawing.Size(225, 22);
             this.nameTbx.TabIndex = 0;
@@ -58,7 +57,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(140, 79);
+            this.label1.Location = new System.Drawing.Point(140, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 17);
             this.label1.TabIndex = 1;
@@ -67,7 +66,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(139, 221);
+            this.label2.Location = new System.Drawing.Point(139, 180);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 17);
             this.label2.TabIndex = 2;
@@ -76,7 +75,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 263);
+            this.label3.Location = new System.Drawing.Point(33, 222);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(162, 17);
             this.label3.TabIndex = 3;
@@ -85,7 +84,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(48, 345);
+            this.label4.Location = new System.Drawing.Point(48, 304);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(147, 17);
             this.label4.TabIndex = 4;
@@ -94,7 +93,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(73, 304);
+            this.label5.Location = new System.Drawing.Point(73, 263);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(122, 17);
             this.label5.TabIndex = 5;
@@ -103,7 +102,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(112, 177);
+            this.label6.Location = new System.Drawing.Point(112, 136);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(83, 17);
             this.label6.TabIndex = 6;
@@ -112,7 +111,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(67, 131);
+            this.label7.Location = new System.Drawing.Point(67, 90);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(128, 17);
             this.label7.TabIndex = 7;
@@ -120,7 +119,7 @@
             // 
             // phoneTbx
             // 
-            this.phoneTbx.Location = new System.Drawing.Point(201, 128);
+            this.phoneTbx.Location = new System.Drawing.Point(201, 87);
             this.phoneTbx.Name = "phoneTbx";
             this.phoneTbx.Size = new System.Drawing.Size(225, 22);
             this.phoneTbx.TabIndex = 8;
@@ -128,7 +127,7 @@
             // 
             // landlineTbx
             // 
-            this.landlineTbx.Location = new System.Drawing.Point(201, 174);
+            this.landlineTbx.Location = new System.Drawing.Point(201, 133);
             this.landlineTbx.Name = "landlineTbx";
             this.landlineTbx.Size = new System.Drawing.Size(225, 22);
             this.landlineTbx.TabIndex = 9;
@@ -136,14 +135,14 @@
             // 
             // emailTbx
             // 
-            this.emailTbx.Location = new System.Drawing.Point(201, 218);
+            this.emailTbx.Location = new System.Drawing.Point(201, 177);
             this.emailTbx.Name = "emailTbx";
             this.emailTbx.Size = new System.Drawing.Size(225, 22);
             this.emailTbx.TabIndex = 10;
             // 
             // citizenNoTbx
             // 
-            this.citizenNoTbx.Location = new System.Drawing.Point(201, 260);
+            this.citizenNoTbx.Location = new System.Drawing.Point(201, 219);
             this.citizenNoTbx.Name = "citizenNoTbx";
             this.citizenNoTbx.Size = new System.Drawing.Size(225, 22);
             this.citizenNoTbx.TabIndex = 11;
@@ -151,35 +150,26 @@
             // 
             // issueDistrictTbx
             // 
-            this.issueDistrictTbx.Location = new System.Drawing.Point(201, 301);
+            this.issueDistrictTbx.Location = new System.Drawing.Point(201, 260);
             this.issueDistrictTbx.Name = "issueDistrictTbx";
             this.issueDistrictTbx.Size = new System.Drawing.Size(225, 22);
             this.issueDistrictTbx.TabIndex = 12;
             // 
-            // createBtn
+            // contactSaveBtn
             // 
-            this.createBtn.Location = new System.Drawing.Point(342, 292);
-            this.createBtn.Name = "createBtn";
-            this.createBtn.Size = new System.Drawing.Size(75, 23);
-            this.createBtn.TabIndex = 15;
-            this.createBtn.Text = "Create";
-            this.createBtn.UseVisualStyleBackColor = true;
-            this.createBtn.Click += new System.EventHandler(this.createBtn_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(413, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Save";
-            this.button2.UseVisualStyleBackColor = true;
+            this.contactSaveBtn.Location = new System.Drawing.Point(189, 339);
+            this.contactSaveBtn.Name = "contactSaveBtn";
+            this.contactSaveBtn.Size = new System.Drawing.Size(75, 23);
+            this.contactSaveBtn.TabIndex = 15;
+            this.contactSaveBtn.Text = "Save";
+            this.contactSaveBtn.UseVisualStyleBackColor = true;
+            this.contactSaveBtn.Click += new System.EventHandler(this.contactSaveBtn_Click);
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.CustomFormat = "";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(201, 345);
+            this.dateTimePicker1.Location = new System.Drawing.Point(201, 304);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(147, 22);
             this.dateTimePicker1.TabIndex = 17;
@@ -187,10 +177,10 @@
             // 
             // contactActionsGrpBx
             // 
-            this.contactActionsGrpBx.Controls.Add(this.createBtn);
-            this.contactActionsGrpBx.Location = new System.Drawing.Point(12, 53);
+            this.contactActionsGrpBx.Controls.Add(this.contactSaveBtn);
+            this.contactActionsGrpBx.Location = new System.Drawing.Point(12, 12);
             this.contactActionsGrpBx.Name = "contactActionsGrpBx";
-            this.contactActionsGrpBx.Size = new System.Drawing.Size(475, 350);
+            this.contactActionsGrpBx.Size = new System.Drawing.Size(475, 398);
             this.contactActionsGrpBx.TabIndex = 18;
             this.contactActionsGrpBx.TabStop = false;
             this.contactActionsGrpBx.Text = "Contact Form";
@@ -199,9 +189,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 415);
+            this.ClientSize = new System.Drawing.Size(500, 419);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.issueDistrictTbx);
             this.Controls.Add(this.citizenNoTbx);
             this.Controls.Add(this.emailTbx);
@@ -241,8 +230,7 @@
         private System.Windows.Forms.TextBox emailTbx;
         private System.Windows.Forms.TextBox citizenNoTbx;
         private System.Windows.Forms.TextBox issueDistrictTbx;
-        private System.Windows.Forms.Button createBtn;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button contactSaveBtn;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.GroupBox contactActionsGrpBx;
     }

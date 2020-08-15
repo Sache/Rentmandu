@@ -32,7 +32,7 @@
             this.viewGroupBx = new System.Windows.Forms.GroupBox();
             this.contactID = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.contactsEditBtn = new System.Windows.Forms.Button();
             this.addContactBtn = new System.Windows.Forms.Button();
             this.contactEmail = new System.Windows.Forms.Label();
             this.contactLandline = new System.Windows.Forms.Label();
@@ -56,7 +56,7 @@
             this.businessType = new System.Windows.Forms.Label();
             this.typeLbl = new System.Windows.Forms.Label();
             this.deleteBtn = new System.Windows.Forms.Button();
-            this.editBtn = new System.Windows.Forms.Button();
+            this.businessEditBtn = new System.Windows.Forms.Button();
             this.businessNumber = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.addBusinessBtn = new System.Windows.Forms.Button();
@@ -97,7 +97,7 @@
             // 
             this.viewGroupBx.Controls.Add(this.contactID);
             this.viewGroupBx.Controls.Add(this.label5);
-            this.viewGroupBx.Controls.Add(this.button2);
+            this.viewGroupBx.Controls.Add(this.contactsEditBtn);
             this.viewGroupBx.Controls.Add(this.addContactBtn);
             this.viewGroupBx.Controls.Add(this.contactEmail);
             this.viewGroupBx.Controls.Add(this.contactLandline);
@@ -135,14 +135,15 @@
             this.label5.TabIndex = 25;
             this.label5.Text = "Contact ID: ";
             // 
-            // button2
+            // contactsEditBtn
             // 
-            this.button2.Location = new System.Drawing.Point(1010, 99);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 24;
-            this.button2.Text = "Edit";
-            this.button2.UseVisualStyleBackColor = true;
+            this.contactsEditBtn.Location = new System.Drawing.Point(1010, 99);
+            this.contactsEditBtn.Name = "contactsEditBtn";
+            this.contactsEditBtn.Size = new System.Drawing.Size(75, 23);
+            this.contactsEditBtn.TabIndex = 24;
+            this.contactsEditBtn.Text = "Edit";
+            this.contactsEditBtn.UseVisualStyleBackColor = true;
+            this.contactsEditBtn.Click += new System.EventHandler(this.contactsEditBtn_Click);
             // 
             // addContactBtn
             // 
@@ -357,7 +358,7 @@
             this.displayGrpTbx.Controls.Add(this.businessType);
             this.displayGrpTbx.Controls.Add(this.typeLbl);
             this.displayGrpTbx.Controls.Add(this.deleteBtn);
-            this.displayGrpTbx.Controls.Add(this.editBtn);
+            this.displayGrpTbx.Controls.Add(this.businessEditBtn);
             this.displayGrpTbx.Controls.Add(this.businessNumber);
             this.displayGrpTbx.Controls.Add(this.label7);
             this.displayGrpTbx.Controls.Add(this.addBusinessBtn);
@@ -407,14 +408,15 @@
             this.deleteBtn.Text = "Delete";
             this.deleteBtn.UseVisualStyleBackColor = true;
             // 
-            // editBtn
+            // businessEditBtn
             // 
-            this.editBtn.Location = new System.Drawing.Point(1010, 50);
-            this.editBtn.Name = "editBtn";
-            this.editBtn.Size = new System.Drawing.Size(75, 23);
-            this.editBtn.TabIndex = 21;
-            this.editBtn.Text = "Edit";
-            this.editBtn.UseVisualStyleBackColor = true;
+            this.businessEditBtn.Location = new System.Drawing.Point(1010, 50);
+            this.businessEditBtn.Name = "businessEditBtn";
+            this.businessEditBtn.Size = new System.Drawing.Size(75, 23);
+            this.businessEditBtn.TabIndex = 21;
+            this.businessEditBtn.Text = "Edit";
+            this.businessEditBtn.UseVisualStyleBackColor = true;
+            this.businessEditBtn.Click += new System.EventHandler(this.businessEditBtn_Click);
             // 
             // businessNumber
             // 
@@ -594,7 +596,7 @@
         private System.Windows.Forms.Label businessType;
         private System.Windows.Forms.Label typeLbl;
         private System.Windows.Forms.Button deleteBtn;
-        private System.Windows.Forms.Button editBtn;
+        private System.Windows.Forms.Button businessEditBtn;
         private System.Windows.Forms.Label businessNumber;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button addBusinessBtn;
@@ -625,7 +627,7 @@
         private System.Windows.Forms.Label CZPIssueDate;
         private System.Windows.Forms.Label CZPIssueDistrict;
         private System.Windows.Forms.Label CZPNumber;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button contactsEditBtn;
         private System.Windows.Forms.Button addContactBtn;
         private System.Windows.Forms.DataGridView contactsGridVew;
         private System.Windows.Forms.Label contactID;

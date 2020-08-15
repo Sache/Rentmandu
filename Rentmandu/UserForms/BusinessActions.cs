@@ -15,9 +15,13 @@ namespace Rentmandu.UserForms
         public BusinessActions()
         {
             InitializeComponent();
+            if(this.Tag != null && this.Text == "Edit")
+            {
+
+            }
         }
 
-        private void createBtn_Click(object sender, EventArgs e)
+        private void businessSaveBtn_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(nameTbx.Text) && string.IsNullOrEmpty(bussTypeTbx.Text)
                  && string.IsNullOrEmpty(mobileTbx.Text) && string.IsNullOrEmpty(landlineTbx.Text)
