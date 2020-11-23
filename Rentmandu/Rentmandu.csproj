@@ -117,6 +117,12 @@
     <Compile Include="UserControls\LogsInfo.Designer.cs">
       <DependentUpon>LogsInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Contracts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Contracts.Designer.cs">
+      <DependentUpon>Contracts.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Property.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -154,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\LogsInfo.resx">
       <DependentUpon>LogsInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Contracts.resx">
+      <DependentUpon>Contracts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Property.resx">
       <DependentUpon>Property.cs</DependentUpon>

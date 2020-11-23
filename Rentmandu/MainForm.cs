@@ -15,7 +15,7 @@ namespace Rentmandu
     {
         Contacts contact = null;
         LogsInfo logs = null;
-        Property property = null;
+        Contracts contracts = null;
         public MainForm()
         {
             InitializeComponent();
@@ -47,13 +47,13 @@ namespace Rentmandu
 
         private void propertyButton_Click(object sender, EventArgs e)
         {
-            if (mainPanel.Controls.ContainsKey("Property"))
-                mainPanel.Controls.Remove(property);
+            if (mainPanel.Controls.ContainsKey("Contracts"))
+                mainPanel.Controls.Remove(contracts);
 
-            property = new Property();
-            mainPanel.Controls.Add(property);
-            property.BringToFront();
-            property.Visible = true;
+            contracts = new Contracts();
+            mainPanel.Controls.Add(contracts);
+            contracts.BringToFront();
+            contracts.Visible = true;
 
         }
     }

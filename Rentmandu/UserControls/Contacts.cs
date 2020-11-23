@@ -103,28 +103,33 @@ namespace Rentmandu.UserControls
         }
         private void contactsGridVew_SelectionChanged(object sender, EventArgs e)
         {
-            DataGridViewRow test = contactsGridVew.CurrentRow;
-            contactID.Text = test.Cells[0].Value.ToString();
-            contactName.Text = test.Cells[1].Value.ToString();
-            contactNumber.Text = test.Cells[2].Value.ToString();
-            contactLandline.Text = test.Cells[3].Value.ToString();
-            contactEmail.Text = test.Cells[4].Value.ToString();
-            CZPNumber.Text = test.Cells[5].Value.ToString();
-            CZPIssueDistrict.Text = test.Cells[6].Value.ToString();
-            CZPIssueDate.Text = test.Cells[7].Value.ToString();
+            DataGridViewRow row = contactsGridVew.CurrentRow;
+            if(row != null)
+            {
+                contactID.Text = row.Cells[0].Value.ToString();
+                contactName.Text = row.Cells[1].Value.ToString();
+                contactNumber.Text = row.Cells[2].Value.ToString();
+                contactLandline.Text = row.Cells[3].Value.ToString();
+                contactEmail.Text = row.Cells[4].Value.ToString();
+                CZPNumber.Text = row.Cells[5].Value.ToString();
+                CZPIssueDistrict.Text = row.Cells[6].Value.ToString();
+                CZPIssueDate.Text = row.Cells[7].Value.ToString();
+            }
         }
 
         private void businessGridview_SelectionChanged(object sender, EventArgs e)
         {
-            DataGridViewRow test = businessGridview.CurrentRow;
-            businessNumber.Text = test.Cells[0].Value.ToString();
-            companyName.Text = test.Cells[1].Value.ToString();
-            businessType.Text = test.Cells[2].Value.ToString();
-            bussMobileNumber.Text = test.Cells[3].Value.ToString();
-            BussLandlineNumber.Text = test.Cells[4].Value.ToString();
-            businessEmail.Text = test.Cells[5].Value.ToString();
-            PANNumber.Text = test.Cells[6].Value.ToString();
+            DataGridViewRow row = businessGridview.CurrentRow;
+            if(row != null)
+            {
+                businessNumber.Text = row.Cells[0].Value.ToString();
+                companyName.Text = row.Cells[1].Value.ToString();
+                businessType.Text = row.Cells[2].Value.ToString();
+                bussMobileNumber.Text = row.Cells[3].Value.ToString();
+                BussLandlineNumber.Text = row.Cells[4].Value.ToString();
+                businessEmail.Text = row.Cells[5].Value.ToString();
+                PANNumber.Text = row.Cells[6].Value.ToString();
+            }
         }
-
     }
 }
