@@ -67,11 +67,28 @@
     <Compile Include="Misc.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Contacts.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\Contacts.Designer.cs">
       <DependentUpon>Contacts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LogsInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\LogsInfo.Designer.cs">
+      <DependentUpon>LogsInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Property.cs">
       <SubType>UserControl</SubType>
@@ -99,16 +116,17 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Contacts.resx">
       <DependentUpon>Contacts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\LogsInfo.resx">
+      <DependentUpon>LogsInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Property.resx">
       <DependentUpon>Property.cs</DependentUpon>
@@ -135,6 +153,23 @@
   <ItemGroup>
     <None Include="img\contacts.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="img\applogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\log.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\edit.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

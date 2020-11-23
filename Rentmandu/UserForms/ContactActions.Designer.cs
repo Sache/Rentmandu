@@ -42,7 +42,7 @@
             this.citizenNoTbx = new System.Windows.Forms.TextBox();
             this.issueDistrictTbx = new System.Windows.Forms.TextBox();
             this.contactSaveBtn = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.czIssueDate = new System.Windows.Forms.DateTimePicker();
             this.contactActionsGrpBx = new System.Windows.Forms.GroupBox();
             this.contactActionsGrpBx.SuspendLayout();
             this.SuspendLayout();
@@ -165,15 +165,15 @@
             this.contactSaveBtn.UseVisualStyleBackColor = true;
             this.contactSaveBtn.Click += new System.EventHandler(this.contactSaveBtn_Click);
             // 
-            // dateTimePicker1
+            // czIssueDate
             // 
-            this.dateTimePicker1.CustomFormat = "";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(201, 304);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(147, 22);
-            this.dateTimePicker1.TabIndex = 17;
-            this.dateTimePicker1.Value = new System.DateTime(2077, 1, 1, 0, 0, 0, 0);
+            this.czIssueDate.CustomFormat = "";
+            this.czIssueDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.czIssueDate.Location = new System.Drawing.Point(201, 304);
+            this.czIssueDate.Name = "czIssueDate";
+            this.czIssueDate.Size = new System.Drawing.Size(147, 22);
+            this.czIssueDate.TabIndex = 17;
+            this.czIssueDate.Value = new System.DateTime(2077, 1, 1, 0, 0, 0, 0);
             // 
             // contactActionsGrpBx
             // 
@@ -183,14 +183,13 @@
             this.contactActionsGrpBx.Size = new System.Drawing.Size(475, 398);
             this.contactActionsGrpBx.TabIndex = 18;
             this.contactActionsGrpBx.TabStop = false;
-            this.contactActionsGrpBx.Text = "Contact Form";
             // 
             // ContactActions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 419);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.czIssueDate);
             this.Controls.Add(this.issueDistrictTbx);
             this.Controls.Add(this.citizenNoTbx);
             this.Controls.Add(this.emailTbx);
@@ -231,7 +230,7 @@
         private System.Windows.Forms.TextBox citizenNoTbx;
         private System.Windows.Forms.TextBox issueDistrictTbx;
         private System.Windows.Forms.Button contactSaveBtn;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker czIssueDate;
         private System.Windows.Forms.GroupBox contactActionsGrpBx;
     }
 }

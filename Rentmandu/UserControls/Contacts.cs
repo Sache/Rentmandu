@@ -39,16 +39,27 @@ namespace Rentmandu.UserControls
         {
             ContactActions contactOP = new ContactActions();
             contactOP.Text = "Edit";
-            contactOP.Tag = contactID.Text;
+            contactOP.EditContact(Convert.ToInt32(contactID.Text));
             contactOP.ShowDialog();
         }
 
         private void businessEditBtn_Click(object sender, EventArgs e)
         {
             BusinessActions businessOP = new BusinessActions();
+            businessOP.EditBusiness(Convert.ToInt32(businessNumber.Text));
             businessOP.Text = "Edit";
-            businessOP.Tag = businessNumber.Text;
             businessOP.ShowDialog();
+        }
+
+        private void businessDeleteBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure to delete " + companyName.Text+ "?",
+                "Delete",
+                MessageBoxButtons.YesNo);
+            if(result == DialogResult.Yes)
+            {
+                MessageBox.Show(db.Instance.DeleteBusiness(Convert.ToInt32(businessNumber.Text)));
+            }
         }
         private void GetContactsData()
         {
@@ -96,7 +107,5 @@ namespace Rentmandu.UserControls
             businessEmail.Text = test.Cells[5].Value.ToString();
             PANNumber.Text = test.Cells[6].Value.ToString();
         }
-
-
     }
 }

@@ -37,12 +37,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.nameTbx = new System.Windows.Forms.TextBox();
-            this.contactActionsGrpBx = new System.Windows.Forms.GroupBox();
+            this.businessActionsGrpBx = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.bussTypeTbx = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panNumberTbx = new System.Windows.Forms.TextBox();
-            this.contactActionsGrpBx.SuspendLayout();
+            this.businessActionsGrpBx.SuspendLayout();
             this.SuspendLayout();
             // 
             // landlineTbx
@@ -121,27 +121,26 @@
             this.nameTbx.Size = new System.Drawing.Size(225, 22);
             this.nameTbx.TabIndex = 19;
             // 
-            // contactActionsGrpBx
+            // businessActionsGrpBx
             // 
-            this.contactActionsGrpBx.Controls.Add(this.label4);
-            this.contactActionsGrpBx.Controls.Add(this.bussTypeTbx);
-            this.contactActionsGrpBx.Controls.Add(this.label3);
-            this.contactActionsGrpBx.Controls.Add(this.panNumberTbx);
-            this.contactActionsGrpBx.Controls.Add(this.businessSaveBtn);
-            this.contactActionsGrpBx.Controls.Add(this.landlineTbx);
-            this.contactActionsGrpBx.Controls.Add(this.nameTbx);
-            this.contactActionsGrpBx.Controls.Add(this.label1);
-            this.contactActionsGrpBx.Controls.Add(this.label2);
-            this.contactActionsGrpBx.Controls.Add(this.emailTbx);
-            this.contactActionsGrpBx.Controls.Add(this.mobileTbx);
-            this.contactActionsGrpBx.Controls.Add(this.label7);
-            this.contactActionsGrpBx.Controls.Add(this.label6);
-            this.contactActionsGrpBx.Location = new System.Drawing.Point(12, 12);
-            this.contactActionsGrpBx.Name = "contactActionsGrpBx";
-            this.contactActionsGrpBx.Size = new System.Drawing.Size(429, 345);
-            this.contactActionsGrpBx.TabIndex = 34;
-            this.contactActionsGrpBx.TabStop = false;
-            this.contactActionsGrpBx.Text = "Business Form";
+            this.businessActionsGrpBx.Controls.Add(this.label4);
+            this.businessActionsGrpBx.Controls.Add(this.bussTypeTbx);
+            this.businessActionsGrpBx.Controls.Add(this.label3);
+            this.businessActionsGrpBx.Controls.Add(this.panNumberTbx);
+            this.businessActionsGrpBx.Controls.Add(this.businessSaveBtn);
+            this.businessActionsGrpBx.Controls.Add(this.landlineTbx);
+            this.businessActionsGrpBx.Controls.Add(this.nameTbx);
+            this.businessActionsGrpBx.Controls.Add(this.label1);
+            this.businessActionsGrpBx.Controls.Add(this.label2);
+            this.businessActionsGrpBx.Controls.Add(this.emailTbx);
+            this.businessActionsGrpBx.Controls.Add(this.mobileTbx);
+            this.businessActionsGrpBx.Controls.Add(this.label7);
+            this.businessActionsGrpBx.Controls.Add(this.label6);
+            this.businessActionsGrpBx.Location = new System.Drawing.Point(12, 12);
+            this.businessActionsGrpBx.Name = "businessActionsGrpBx";
+            this.businessActionsGrpBx.Size = new System.Drawing.Size(429, 345);
+            this.businessActionsGrpBx.TabIndex = 34;
+            this.businessActionsGrpBx.TabStop = false;
             // 
             // label4
             // 
@@ -181,14 +180,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(467, 369);
-            this.Controls.Add(this.contactActionsGrpBx);
+            this.Controls.Add(this.businessActionsGrpBx);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "BusinessActions";
             this.Text = "BusinessActions";
-            this.contactActionsGrpBx.ResumeLayout(false);
-            this.contactActionsGrpBx.PerformLayout();
+            this.businessActionsGrpBx.ResumeLayout(false);
+            this.businessActionsGrpBx.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -203,7 +202,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox nameTbx;
-        private System.Windows.Forms.GroupBox contactActionsGrpBx;
+        private System.Windows.Forms.GroupBox businessActionsGrpBx;
         private System.Windows.Forms.TextBox panNumberTbx;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

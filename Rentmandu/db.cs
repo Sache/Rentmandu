@@ -28,17 +28,12 @@ namespace Rentmandu
             }
         }
 
-        public void Main()
-        {
-            GetConnection();
-        }
-
         private  static MySqlConnection GetConnection()
         {
-            string server = "localhost";
-            string database = "db_rentmandu";
-            string uid = "root";
-            string password = "";
+            string server = Properties.Settings.Default.dbHost;
+            string database = Properties.Settings.Default.dbName;
+            string uid = Properties.Settings.Default.dbUsername;
+            string password = Properties.Settings.Default.dbPassword;
             
             string connectionString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={password};Allow User Variables=True;";
             MySqlConnection newCON = new MySqlConnection(connectionString);
@@ -124,6 +119,50 @@ namespace Rentmandu
             return null;
         }
 
+        public DataTable GetBusiness (int clientID)
+        {
+            MySqlConnection myConnection = GetConnection();
+            string query = "SELECT * FROM tblbusiness  Where ClientID =" + clientID ;
+            MySqlCommand command = new MySqlCommand(query, myConnection);
+            command.Connection = myConnection;
+            try
+            {
+                myConnection.Open();
+                MySqlDataAdapter reader = new MySqlDataAdapter(command); //read data from the database
+                DataTable dataTable = new DataTable();
+                reader.Fill(dataTable);
+                myConnection.Close();
+                return dataTable;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error:" + e);
+            }
+            return null;
+        }
+
+        public DataTable GetContact(int contactid)
+        {
+            MySqlConnection myConnection = GetConnection();
+            string query = "SELECT * FROM tblcontacts  Where ContactID =" + contactid;
+            MySqlCommand command = new MySqlCommand(query, myConnection);
+            command.Connection = myConnection;
+            try
+            {
+                myConnection.Open();
+                MySqlDataAdapter reader = new MySqlDataAdapter(command); //read data from the database
+                DataTable dataTable = new DataTable();
+                reader.Fill(dataTable);
+                myConnection.Close();
+                return dataTable;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error:" + e);
+            }
+            return null;
+        }
+
         public string AddBusiness(string Name, string Type, Int64 Mobile, Int64 Landline, string Email, Int64 PAN)
         {
             try
@@ -147,6 +186,44 @@ namespace Rentmandu
                 return "ERROR: " + ex;
             }
             return "Contact successfully added.";
+        }
+
+        public string UpdateBusiness(int ClientID, string Name, string Type, Int64 Mobile, Int64 Landline, string Email, Int64 PAN)
+        {
+            try
+            {
+                MySqlConnection myConnection = GetConnection();
+                MySqlCommand dbCommand = new MySqlCommand();
+                dbCommand.CommandText = $"UPDATE tblbusiness SET Name = '{Name}', Type = '{Type}', Mobile = '{Mobile}', Landline = '{Landline}', Email = '{Email}', PAN = '{PAN}' WHERE ClientID = {ClientID}"; // command to instert trainlines
+                dbCommand.Connection = myConnection;
+                myConnection.Open();
+                dbCommand.ExecuteNonQuery();
+                myConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                return "ERROR: " + ex;
+            }
+            return "Business details updated successfully.";
+        }
+
+        public string DeleteBusiness(int ClientID)
+        {
+            try
+            {
+                MySqlConnection myConnection = GetConnection();
+                MySqlCommand dbCommand = new MySqlCommand();
+                dbCommand.CommandText = $"DELETE FROM tblbusiness WHERE ClientID = {ClientID}"; // command to instert trainlines
+                dbCommand.Connection = myConnection;
+                myConnection.Open();
+                dbCommand.ExecuteNonQuery();
+                myConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                return "ERROR: " + ex;
+            }
+            return "Business deleted successfully.";
         }
 
 

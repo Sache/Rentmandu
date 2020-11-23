@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Contacts));
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.viewGroupBx = new System.Windows.Forms.GroupBox();
-            this.contactID = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.deleteContactsBtn = new System.Windows.Forms.Button();
             this.contactsEditBtn = new System.Windows.Forms.Button();
             this.addContactBtn = new System.Windows.Forms.Button();
+            this.contactID = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.contactEmail = new System.Windows.Forms.Label();
             this.contactLandline = new System.Windows.Forms.Label();
             this.contactNumber = new System.Windows.Forms.Label();
@@ -55,7 +57,7 @@
             this.displayGrpTbx = new System.Windows.Forms.GroupBox();
             this.businessType = new System.Windows.Forms.Label();
             this.typeLbl = new System.Windows.Forms.Label();
-            this.deleteBtn = new System.Windows.Forms.Button();
+            this.businessDeleteBtn = new System.Windows.Forms.Button();
             this.businessEditBtn = new System.Windows.Forms.Button();
             this.businessNumber = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -95,10 +97,11 @@
             // 
             // viewGroupBx
             // 
-            this.viewGroupBx.Controls.Add(this.contactID);
-            this.viewGroupBx.Controls.Add(this.label5);
+            this.viewGroupBx.Controls.Add(this.deleteContactsBtn);
             this.viewGroupBx.Controls.Add(this.contactsEditBtn);
             this.viewGroupBx.Controls.Add(this.addContactBtn);
+            this.viewGroupBx.Controls.Add(this.contactID);
+            this.viewGroupBx.Controls.Add(this.label5);
             this.viewGroupBx.Controls.Add(this.contactEmail);
             this.viewGroupBx.Controls.Add(this.contactLandline);
             this.viewGroupBx.Controls.Add(this.contactNumber);
@@ -114,6 +117,35 @@
             this.viewGroupBx.TabIndex = 2;
             this.viewGroupBx.TabStop = false;
             this.viewGroupBx.Text = "View";
+            // 
+            // deleteContactsBtn
+            // 
+            this.deleteContactsBtn.Image = global::Rentmandu.Properties.Resources.minus;
+            this.deleteContactsBtn.Location = new System.Drawing.Point(1030, 132);
+            this.deleteContactsBtn.Name = "deleteContactsBtn";
+            this.deleteContactsBtn.Size = new System.Drawing.Size(46, 42);
+            this.deleteContactsBtn.TabIndex = 29;
+            this.deleteContactsBtn.UseVisualStyleBackColor = true;
+            // 
+            // contactsEditBtn
+            // 
+            this.contactsEditBtn.Image = global::Rentmandu.Properties.Resources.edit;
+            this.contactsEditBtn.Location = new System.Drawing.Point(1030, 84);
+            this.contactsEditBtn.Name = "contactsEditBtn";
+            this.contactsEditBtn.Size = new System.Drawing.Size(46, 42);
+            this.contactsEditBtn.TabIndex = 28;
+            this.contactsEditBtn.UseVisualStyleBackColor = true;
+            this.contactsEditBtn.Click += new System.EventHandler(this.contactsEditBtn_Click);
+            // 
+            // addContactBtn
+            // 
+            this.addContactBtn.Image = ((System.Drawing.Image)(resources.GetObject("addContactBtn.Image")));
+            this.addContactBtn.Location = new System.Drawing.Point(1030, 31);
+            this.addContactBtn.Name = "addContactBtn";
+            this.addContactBtn.Size = new System.Drawing.Size(46, 47);
+            this.addContactBtn.TabIndex = 27;
+            this.addContactBtn.UseVisualStyleBackColor = true;
+            this.addContactBtn.Click += new System.EventHandler(this.addContactBtn_Click);
             // 
             // contactID
             // 
@@ -134,26 +166,6 @@
             this.label5.Size = new System.Drawing.Size(90, 18);
             this.label5.TabIndex = 25;
             this.label5.Text = "Contact ID: ";
-            // 
-            // contactsEditBtn
-            // 
-            this.contactsEditBtn.Location = new System.Drawing.Point(1010, 99);
-            this.contactsEditBtn.Name = "contactsEditBtn";
-            this.contactsEditBtn.Size = new System.Drawing.Size(75, 23);
-            this.contactsEditBtn.TabIndex = 24;
-            this.contactsEditBtn.Text = "Edit";
-            this.contactsEditBtn.UseVisualStyleBackColor = true;
-            this.contactsEditBtn.Click += new System.EventHandler(this.contactsEditBtn_Click);
-            // 
-            // addContactBtn
-            // 
-            this.addContactBtn.Location = new System.Drawing.Point(1010, 70);
-            this.addContactBtn.Name = "addContactBtn";
-            this.addContactBtn.Size = new System.Drawing.Size(75, 23);
-            this.addContactBtn.TabIndex = 23;
-            this.addContactBtn.Text = "Add";
-            this.addContactBtn.UseVisualStyleBackColor = true;
-            this.addContactBtn.Click += new System.EventHandler(this.addContactBtn_Click);
             // 
             // contactEmail
             // 
@@ -357,7 +369,7 @@
             // 
             this.displayGrpTbx.Controls.Add(this.businessType);
             this.displayGrpTbx.Controls.Add(this.typeLbl);
-            this.displayGrpTbx.Controls.Add(this.deleteBtn);
+            this.displayGrpTbx.Controls.Add(this.businessDeleteBtn);
             this.displayGrpTbx.Controls.Add(this.businessEditBtn);
             this.displayGrpTbx.Controls.Add(this.businessNumber);
             this.displayGrpTbx.Controls.Add(this.label7);
@@ -399,22 +411,23 @@
             this.typeLbl.TabIndex = 23;
             this.typeLbl.Text = "Type: ";
             // 
-            // deleteBtn
+            // businessDeleteBtn
             // 
-            this.deleteBtn.Location = new System.Drawing.Point(1010, 79);
-            this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(75, 23);
-            this.deleteBtn.TabIndex = 22;
-            this.deleteBtn.Text = "Delete";
-            this.deleteBtn.UseVisualStyleBackColor = true;
+            this.businessDeleteBtn.Image = global::Rentmandu.Properties.Resources.minus;
+            this.businessDeleteBtn.Location = new System.Drawing.Point(1029, 128);
+            this.businessDeleteBtn.Name = "businessDeleteBtn";
+            this.businessDeleteBtn.Size = new System.Drawing.Size(47, 47);
+            this.businessDeleteBtn.TabIndex = 22;
+            this.businessDeleteBtn.UseVisualStyleBackColor = true;
+            this.businessDeleteBtn.Click += new System.EventHandler(this.businessDeleteBtn_Click);
             // 
             // businessEditBtn
             // 
-            this.businessEditBtn.Location = new System.Drawing.Point(1010, 50);
+            this.businessEditBtn.Image = global::Rentmandu.Properties.Resources.edit;
+            this.businessEditBtn.Location = new System.Drawing.Point(1029, 80);
             this.businessEditBtn.Name = "businessEditBtn";
-            this.businessEditBtn.Size = new System.Drawing.Size(75, 23);
+            this.businessEditBtn.Size = new System.Drawing.Size(47, 42);
             this.businessEditBtn.TabIndex = 21;
-            this.businessEditBtn.Text = "Edit";
             this.businessEditBtn.UseVisualStyleBackColor = true;
             this.businessEditBtn.Click += new System.EventHandler(this.businessEditBtn_Click);
             // 
@@ -440,11 +453,11 @@
             // 
             // addBusinessBtn
             // 
-            this.addBusinessBtn.Location = new System.Drawing.Point(1010, 21);
+            this.addBusinessBtn.Image = ((System.Drawing.Image)(resources.GetObject("addBusinessBtn.Image")));
+            this.addBusinessBtn.Location = new System.Drawing.Point(1029, 27);
             this.addBusinessBtn.Name = "addBusinessBtn";
-            this.addBusinessBtn.Size = new System.Drawing.Size(75, 23);
+            this.addBusinessBtn.Size = new System.Drawing.Size(47, 47);
             this.addBusinessBtn.TabIndex = 18;
-            this.addBusinessBtn.Text = "Add";
             this.addBusinessBtn.UseVisualStyleBackColor = true;
             this.addBusinessBtn.Click += new System.EventHandler(this.addBusinessBtn_Click);
             // 
@@ -595,7 +608,7 @@
         private System.Windows.Forms.GroupBox displayGrpTbx;
         private System.Windows.Forms.Label businessType;
         private System.Windows.Forms.Label typeLbl;
-        private System.Windows.Forms.Button deleteBtn;
+        private System.Windows.Forms.Button businessDeleteBtn;
         private System.Windows.Forms.Button businessEditBtn;
         private System.Windows.Forms.Label businessNumber;
         private System.Windows.Forms.Label label7;
@@ -627,10 +640,11 @@
         private System.Windows.Forms.Label CZPIssueDate;
         private System.Windows.Forms.Label CZPIssueDistrict;
         private System.Windows.Forms.Label CZPNumber;
-        private System.Windows.Forms.Button contactsEditBtn;
-        private System.Windows.Forms.Button addContactBtn;
         private System.Windows.Forms.DataGridView contactsGridVew;
         private System.Windows.Forms.Label contactID;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button addContactBtn;
+        private System.Windows.Forms.Button deleteContactsBtn;
+        private System.Windows.Forms.Button contactsEditBtn;
     }
 }

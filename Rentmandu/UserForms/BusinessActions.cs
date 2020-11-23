@@ -15,24 +15,40 @@ namespace Rentmandu.UserForms
         public BusinessActions()
         {
             InitializeComponent();
-            if(this.Tag != null && this.Text == "Edit")
-            {
-
-            }
         }
 
         private void businessSaveBtn_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(nameTbx.Text) && string.IsNullOrEmpty(bussTypeTbx.Text)
-                 && string.IsNullOrEmpty(mobileTbx.Text) && string.IsNullOrEmpty(landlineTbx.Text)
-                 && string.IsNullOrEmpty(emailTbx.Text) && string.IsNullOrEmpty(panNumberTbx.Text))
+            if (string.IsNullOrEmpty(nameTbx.Text) || string.IsNullOrEmpty(bussTypeTbx.Text)
+                 || string.IsNullOrEmpty(mobileTbx.Text) || string.IsNullOrEmpty(landlineTbx.Text)
+                 || string.IsNullOrEmpty(emailTbx.Text) || string.IsNullOrEmpty(panNumberTbx.Text))
             {
                 MessageBox.Show("Fill all the requirements.");
             }
             else
             {
-                MessageBox.Show(db.Instance.AddBusiness(nameTbx.Text, bussTypeTbx.Text, Convert.ToInt64(mobileTbx.Text), Convert.ToInt64(landlineTbx.Text), emailTbx.Text, Convert.ToInt64(panNumberTbx.Text)));
+                if (string.IsNullOrEmpty(businessActionsGrpBx.Text))
+                {
+                    MessageBox.Show(db.Instance.AddBusiness(nameTbx.Text, bussTypeTbx.Text, Convert.ToInt64(mobileTbx.Text), Convert.ToInt64(landlineTbx.Text), emailTbx.Text, Convert.ToInt64(panNumberTbx.Text)));
+                } 
+                else
+                {
+                    MessageBox.Show(db.Instance.UpdateBusiness(Convert.ToInt32(businessActionsGrpBx.Text), nameTbx.Text, bussTypeTbx.Text, Convert.ToInt64(mobileTbx.Text), Convert.ToInt64(landlineTbx.Text), emailTbx.Text, Convert.ToInt64(panNumberTbx.Text)));
+                }
+                    
             }
+        }
+
+        public  void  EditBusiness(int id)
+        {
+            DataTable tb = db.Instance.GetBusiness(id);
+            businessActionsGrpBx.Text = tb.Rows[0]["ClientID"].ToString();
+            nameTbx.Text = tb.Rows[0]["Name"].ToString();
+            bussTypeTbx.Text = tb.Rows[0]["Type"].ToString();
+            landlineTbx.Text = tb.Rows[0]["Landline"].ToString();
+            mobileTbx.Text = tb.Rows[0]["Mobile"].ToString();
+            emailTbx.Text = tb.Rows[0]["Email"].ToString();
+            panNumberTbx.Text = tb.Rows[0]["PAN"].ToString();
         }
 
         private void NumbersOnly_KeyPress(object sender, KeyPressEventArgs e)

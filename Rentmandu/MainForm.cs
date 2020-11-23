@@ -13,6 +13,8 @@ namespace Rentmandu
 {
     public partial class MainForm : Form
     {
+        Contacts contact = null;
+        LogsInfo logs = null;
         public MainForm()
         {
             InitializeComponent();
@@ -21,14 +23,27 @@ namespace Rentmandu
         }
         private void contactsBtn_Click(object sender, EventArgs e)
         {
-            if (mainPanel.Controls.ContainsKey("Contacts") == true)
+            if (mainPanel.Controls.ContainsKey("Contacts") == false)
             {
-                mainPanel.Controls.RemoveByKey("Contacts");
+                contact = new Contacts();
+                mainPanel.Controls.Add(contact);
             }
-            Contacts contact = new Contacts();
-            mainPanel.Controls.Add(contact);
+
             contact.BringToFront();
             contact.Visible = true;
+        }
+
+        private void logsBtn_Click(object sender, EventArgs e)
+        {
+            if (mainPanel.Controls.ContainsKey("LogsInfo") == false)
+            {
+                logs = new LogsInfo();
+                mainPanel.Controls.Add(logs);
+            }
+
+            logs.BringToFront();
+            logs.Visible = true;
+
         }
     }
 }
