@@ -32,6 +32,7 @@
             this.mainPanel = new System.Windows.Forms.Panel();
             this.logsBtn = new System.Windows.Forms.Button();
             this.contactsBtn = new System.Windows.Forms.Button();
+            this.propertyButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -49,7 +50,7 @@
             // 
             this.logsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.logsBtn.Image = global::Rentmandu.Properties.Resources.log;
-            this.logsBtn.Location = new System.Drawing.Point(12, 105);
+            this.logsBtn.Location = new System.Drawing.Point(12, 403);
             this.logsBtn.Name = "logsBtn";
             this.logsBtn.Size = new System.Drawing.Size(72, 72);
             this.logsBtn.TabIndex = 1;
@@ -67,12 +68,24 @@
             this.contactsBtn.UseVisualStyleBackColor = true;
             this.contactsBtn.Click += new System.EventHandler(this.contactsBtn_Click);
             // 
+            // propertyButton
+            // 
+            this.propertyButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.propertyButton.Image = global::Rentmandu.Properties.Resources.contacts;
+            this.propertyButton.Location = new System.Drawing.Point(12, 115);
+            this.propertyButton.Name = "propertyButton";
+            this.propertyButton.Size = new System.Drawing.Size(72, 72);
+            this.propertyButton.TabIndex = 2;
+            this.propertyButton.UseVisualStyleBackColor = true;
+            this.propertyButton.Click += new System.EventHandler(this.propertyButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1223, 673);
+            this.Controls.Add(this.propertyButton);
             this.Controls.Add(this.logsBtn);
             this.Controls.Add(this.contactsBtn);
             this.Controls.Add(this.mainPanel);
@@ -88,5 +101,6 @@
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Button contactsBtn;
         private System.Windows.Forms.Button logsBtn;
+        private System.Windows.Forms.Button propertyButton;
     }
 }
