@@ -31,13 +31,26 @@ namespace Rentmandu.UserForms
                 if (string.IsNullOrEmpty(contactId))
                 { //  Create New Contact Profile
                     MessageBox.Show(db.Instance.AddContact( 
-                        nameTbx.Text, Convert.ToInt64(phoneTbx.Text), Convert.ToInt64(landlineTbx.Text), emailTbx.Text, Convert.ToInt64(citizenNoTbx.Text), issueDistrictTbx.Text, czIssueDate.Value.Date.ToString("dd/MM/yyyy")));
+                        nameTbx.Text, 
+                        Convert.ToInt64(phoneTbx.Text),
+                        Convert.ToInt64(landlineTbx.Text),
+                        emailTbx.Text, Convert.ToInt64(citizenNoTbx.Text),
+                        issueDistrictTbx.Text,
+                        czIssueDate.Value.Date.ToString("dd/MM/yyyy")));
                 }
                 else
                 {
-                    
+                    MessageBox.Show(db.Instance.UpdateContact(
+                       Convert.ToInt32(contactActionsGrpBx.Text),
+                       nameTbx.Text, 
+                       Convert.ToInt64(phoneTbx.Text), 
+                       Convert.ToInt64(landlineTbx.Text), 
+                       emailTbx.Text,
+                       Convert.ToInt64(citizenNoTbx.Text),
+                       issueDistrictTbx.Text,
+                       czIssueDate.Value.Date.ToString("dd/MM/yyyy")));
                 }
-
+                this.Close();
             }
            
         }

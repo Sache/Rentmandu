@@ -35,6 +35,7 @@ namespace Rentmandu.UserForms
                 {
                     MessageBox.Show(db.Instance.UpdateBusiness(Convert.ToInt32(businessActionsGrpBx.Text), nameTbx.Text, bussTypeTbx.Text, Convert.ToInt64(mobileTbx.Text), Convert.ToInt64(landlineTbx.Text), emailTbx.Text, Convert.ToInt64(panNumberTbx.Text)));
                 }
+                this.Close();
                     
             }
         }

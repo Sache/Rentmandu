@@ -208,6 +208,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ContactActions";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.contactActionsGrpBx.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

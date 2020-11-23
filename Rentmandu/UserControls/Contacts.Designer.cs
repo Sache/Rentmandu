@@ -126,6 +126,7 @@
             this.deleteContactsBtn.Size = new System.Drawing.Size(46, 42);
             this.deleteContactsBtn.TabIndex = 29;
             this.deleteContactsBtn.UseVisualStyleBackColor = true;
+            this.deleteContactsBtn.Click += new System.EventHandler(this.deleteContactsBtn_Click);
             // 
             // contactsEditBtn
             // 

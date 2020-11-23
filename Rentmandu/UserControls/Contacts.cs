@@ -26,13 +26,15 @@ namespace Rentmandu.UserControls
             BusinessActions businessOP = new BusinessActions();
             businessOP.Text = "Create";
             businessOP.ShowDialog();
+            GetBusinessData();
         }
 
         private void addContactBtn_Click(object sender, EventArgs e)
         {
             ContactActions contactOP = new ContactActions();
             contactOP.Text = "Create";
-            contactOP.ShowDialog();        
+            contactOP.ShowDialog();
+            GetContactsData();
         }
 
         private void contactsEditBtn_Click(object sender, EventArgs e)
@@ -41,6 +43,7 @@ namespace Rentmandu.UserControls
             contactOP.Text = "Edit";
             contactOP.EditContact(Convert.ToInt32(contactID.Text));
             contactOP.ShowDialog();
+            GetContactsData();
         }
 
         private void businessEditBtn_Click(object sender, EventArgs e)
@@ -49,6 +52,20 @@ namespace Rentmandu.UserControls
             businessOP.EditBusiness(Convert.ToInt32(businessNumber.Text));
             businessOP.Text = "Edit";
             businessOP.ShowDialog();
+            GetBusinessData();
+        }
+
+        private void deleteContactsBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure to delete " + contactName.Text + "?",
+            "Delete",
+            MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                MessageBox.Show(db.Instance.DeleteContact(Convert.ToInt32(contactID.Text)));
+            }
+            GetContactsData();
         }
 
         private void businessDeleteBtn_Click(object sender, EventArgs e)
@@ -60,8 +77,9 @@ namespace Rentmandu.UserControls
             {
                 MessageBox.Show(db.Instance.DeleteBusiness(Convert.ToInt32(businessNumber.Text)));
             }
+            GetBusinessData();
         }
-        private void GetContactsData()
+        public void GetContactsData()
         {
             using (DataTable contactdt = db.Instance.PopulateContactsGridView())
             {
@@ -107,5 +125,6 @@ namespace Rentmandu.UserControls
             businessEmail.Text = test.Cells[5].Value.ToString();
             PANNumber.Text = test.Cells[6].Value.ToString();
         }
+
     }
 }

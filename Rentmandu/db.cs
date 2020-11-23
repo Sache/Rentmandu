@@ -97,6 +97,25 @@ namespace Rentmandu
             return "Contact successfully added.";
         }
 
+        public string UpdateContact(int contactID, string Name, Int64 Mobile, Int64 Landline, string Email, Int64 CitizenshipNo, string IssueDistrict, string IssueDate)
+        {
+            try
+            {
+                MySqlConnection myConnection = GetConnection();
+                MySqlCommand dbCommand = new MySqlCommand();
+                dbCommand.CommandText = $"UPDATE tblcontacts SET Name = '{Name}', Mobile = '{Mobile}', Landline = '{Landline}', Email = '{Email}', CitizenshipNo = '{CitizenshipNo}', CZPIssueDistrict = '{IssueDistrict}', CZPIssueDate = '{IssueDate}'  WHERE ContactID = {contactID}"; // command to instert trainlines
+                dbCommand.Connection = myConnection;
+                myConnection.Open();
+                dbCommand.ExecuteNonQuery();
+                myConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                return "ERROR: " + ex;
+            }
+            return "Business details updated successfully.";
+        }
+
         public DataTable PopulateContactsGridView(string Name = null)
         {
             MySqlConnection myConnection = GetConnection();
@@ -207,6 +226,7 @@ namespace Rentmandu
             return "Business details updated successfully.";
         }
 
+
         public string DeleteBusiness(int ClientID)
         {
             try
@@ -224,6 +244,25 @@ namespace Rentmandu
                 return "ERROR: " + ex;
             }
             return "Business deleted successfully.";
+        }
+
+        public string DeleteContact(int ContactID)
+        {
+            try
+            {
+                MySqlConnection myConnection = GetConnection();
+                MySqlCommand dbCommand = new MySqlCommand();
+                dbCommand.CommandText = $"DELETE FROM tblcontacts WHERE ContactID = {ContactID}"; // command to instert trainlines
+                dbCommand.Connection = myConnection;
+                myConnection.Open();
+                dbCommand.ExecuteNonQuery();
+                myConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                return "ERROR: " + ex;
+            }
+            return "Contact deleted successfully.";
         }
 
 

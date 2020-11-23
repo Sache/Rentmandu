@@ -185,6 +185,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "BusinessActions";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BusinessActions";
             this.businessActionsGrpBx.ResumeLayout(false);
             this.businessActionsGrpBx.PerformLayout();
