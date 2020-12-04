@@ -111,6 +111,12 @@
     <Compile Include="UserControls\Contacts.Designer.cs">
       <DependentUpon>Contacts.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Email.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Email.Designer.cs">
+      <DependentUpon>Email.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\LogsInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -141,6 +147,12 @@
     <Compile Include="UserForms\ContactActions.Designer.cs">
       <DependentUpon>ContactActions.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserForms\PropertyActions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForms\PropertyActions.Designer.cs">
+      <DependentUpon>PropertyActions.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +170,9 @@
     <EmbeddedResource Include="UserControls\Contacts.resx">
       <DependentUpon>Contacts.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Email.resx">
+      <DependentUpon>Email.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\LogsInfo.resx">
       <DependentUpon>LogsInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\ContactActions.resx">
       <DependentUpon>ContactActions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForms\PropertyActions.resx">
+      <DependentUpon>PropertyActions.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

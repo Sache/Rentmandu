@@ -48,40 +48,57 @@ namespace Rentmandu.UserControls
 
         private void businessEditBtn_Click(object sender, EventArgs e)
         {
-            BusinessActions businessOP = new BusinessActions();
-            businessOP.EditBusiness(Convert.ToInt32(businessNumber.Text));
-            businessOP.Text = "Edit";
-            businessOP.ShowDialog();
-            GetBusinessData();
+            try
+            {
+                BusinessActions businessOP = new BusinessActions();
+                businessOP.EditBusiness(Convert.ToInt32(businessNumber.Text));
+                businessOP.Text = "Edit";
+                businessOP.ShowDialog();
+                GetBusinessData();
+            }
+            catch
+            {}
         }
 
         private void deleteContactsBtn_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure to delete " + contactName.Text + "?",
-            "Delete",
-            MessageBoxButtons.YesNo);
-
-            if (result == DialogResult.Yes)
+            try
             {
-                MessageBox.Show(db.Instance.DeleteContact(Convert.ToInt32(contactID.Text)));
-            }
-            GetContactsData();
+                int contactNum = Convert.ToInt32(contactID.Text);
+                DialogResult result = MessageBox.Show("Are you sure to delete " + contactName.Text + "?",
+                "Delete",
+                MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    MessageBox.Show(db.Instance.DeleteContact(contactNum));
+                }
+                GetContactsData();
+            } 
+            catch
+            {}
         }
 
         private void businessDeleteBtn_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure to delete " + companyName.Text+ "?",
-                "Delete",
-                MessageBoxButtons.YesNo);
-            if(result == DialogResult.Yes)
+            try
             {
-                MessageBox.Show(db.Instance.DeleteBusiness(Convert.ToInt32(businessNumber.Text)));
+                int contactNum = Convert.ToInt32(businessNumber.Text);
+                DialogResult result = MessageBox.Show("Are you sure to delete " + companyName.Text + "?",
+                    "Delete",
+                    MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    MessageBox.Show(db.Instance.DeleteContact(contactNum));
+                }
+                GetBusinessData();
             }
-            GetBusinessData();
+            catch
+            {}
         }
         public void GetContactsData()
         {
-            using (DataTable contactdt = db.Instance.PopulateContactsGridView())
+            using (DataTable contactdt = db.Instance.PopulateContacts())
             {
                 contactsGridVew.DataSource = contactdt;
                 contactsGridVew.Columns["ContactID"].Visible = false;
@@ -94,10 +111,10 @@ namespace Rentmandu.UserControls
 
         private void GetBusinessData()
         {
-            using (DataTable contactdt = db.Instance.PopulateBusinessGridView())
+            using (DataTable contactdt = db.Instance.PopulateBusiness())
             {
                 businessGridview.DataSource = contactdt;
-                businessGridview.Columns["ClientID"].Visible = false;
+                businessGridview.Columns["ContactID"].Visible = false;
             }
 
         }

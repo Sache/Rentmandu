@@ -30,9 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Contracts));
             this.viewGroupBx = new System.Windows.Forms.GroupBox();
-            this.deleteContactsBtn = new System.Windows.Forms.Button();
-            this.contactsEditBtn = new System.Windows.Forms.Button();
-            this.addContactBtn = new System.Windows.Forms.Button();
             this.contactID = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.contactEmail = new System.Windows.Forms.Label();
@@ -51,6 +48,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.nameLbl = new System.Windows.Forms.Label();
             this.contactsGridVew = new System.Windows.Forms.DataGridView();
+            this.deleteContactsBtn = new System.Windows.Forms.Button();
+            this.contactsEditBtn = new System.Windows.Forms.Button();
+            this.addContactBtn = new System.Windows.Forms.Button();
             this.viewGroupBx.SuspendLayout();
             this.citizenshipGrpBx.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contactsGridVew)).BeginInit();
@@ -78,33 +78,6 @@
             this.viewGroupBx.TabIndex = 3;
             this.viewGroupBx.TabStop = false;
             this.viewGroupBx.Text = "View";
-            // 
-            // deleteContactsBtn
-            // 
-            this.deleteContactsBtn.Image = global::Rentmandu.Properties.Resources.minus;
-            this.deleteContactsBtn.Location = new System.Drawing.Point(1030, 132);
-            this.deleteContactsBtn.Name = "deleteContactsBtn";
-            this.deleteContactsBtn.Size = new System.Drawing.Size(46, 42);
-            this.deleteContactsBtn.TabIndex = 29;
-            this.deleteContactsBtn.UseVisualStyleBackColor = true;
-            // 
-            // contactsEditBtn
-            // 
-            this.contactsEditBtn.Image = global::Rentmandu.Properties.Resources.edit;
-            this.contactsEditBtn.Location = new System.Drawing.Point(1030, 84);
-            this.contactsEditBtn.Name = "contactsEditBtn";
-            this.contactsEditBtn.Size = new System.Drawing.Size(46, 42);
-            this.contactsEditBtn.TabIndex = 28;
-            this.contactsEditBtn.UseVisualStyleBackColor = true;
-            // 
-            // addContactBtn
-            // 
-            this.addContactBtn.Image = ((System.Drawing.Image)(resources.GetObject("addContactBtn.Image")));
-            this.addContactBtn.Location = new System.Drawing.Point(1030, 31);
-            this.addContactBtn.Name = "addContactBtn";
-            this.addContactBtn.Size = new System.Drawing.Size(46, 47);
-            this.addContactBtn.TabIndex = 27;
-            this.addContactBtn.UseVisualStyleBackColor = true;
             // 
             // contactID
             // 
@@ -301,14 +274,42 @@
             this.contactsGridVew.Size = new System.Drawing.Size(1091, 371);
             this.contactsGridVew.TabIndex = 4;
             // 
-            // Property
+            // deleteContactsBtn
+            // 
+            this.deleteContactsBtn.Image = global::Rentmandu.Properties.Resources.minus;
+            this.deleteContactsBtn.Location = new System.Drawing.Point(1030, 132);
+            this.deleteContactsBtn.Name = "deleteContactsBtn";
+            this.deleteContactsBtn.Size = new System.Drawing.Size(46, 42);
+            this.deleteContactsBtn.TabIndex = 29;
+            this.deleteContactsBtn.UseVisualStyleBackColor = true;
+            // 
+            // contactsEditBtn
+            // 
+            this.contactsEditBtn.Image = global::Rentmandu.Properties.Resources.edit;
+            this.contactsEditBtn.Location = new System.Drawing.Point(1030, 84);
+            this.contactsEditBtn.Name = "contactsEditBtn";
+            this.contactsEditBtn.Size = new System.Drawing.Size(46, 42);
+            this.contactsEditBtn.TabIndex = 28;
+            this.contactsEditBtn.UseVisualStyleBackColor = true;
+            this.contactsEditBtn.Click += new System.EventHandler(this.contactsEditBtn_Click);
+            // 
+            // addContactBtn
+            // 
+            this.addContactBtn.Image = ((System.Drawing.Image)(resources.GetObject("addContactBtn.Image")));
+            this.addContactBtn.Location = new System.Drawing.Point(1030, 31);
+            this.addContactBtn.Name = "addContactBtn";
+            this.addContactBtn.Size = new System.Drawing.Size(46, 47);
+            this.addContactBtn.TabIndex = 27;
+            this.addContactBtn.UseVisualStyleBackColor = true;
+            // 
+            // Contracts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.contactsGridVew);
             this.Controls.Add(this.viewGroupBx);
-            this.Name = "Property";
+            this.Name = "Contracts";
             this.Size = new System.Drawing.Size(1111, 649);
             this.viewGroupBx.ResumeLayout(false);
             this.viewGroupBx.PerformLayout();

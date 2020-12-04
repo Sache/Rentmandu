@@ -109,7 +109,7 @@ namespace Rentmandu.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("smtp.gmail.com")]
         public string EmailServer {
             get {
                 return ((string)(this["EmailServer"]));
@@ -121,10 +121,10 @@ namespace Rentmandu.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("25")]
-        public string EmailPort {
+        [global::System.Configuration.DefaultSettingValueAttribute("465")]
+        public int EmailPort {
             get {
-                return ((string)(this["EmailPort"]));
+                return ((int)(this["EmailPort"]));
             }
             set {
                 this["EmailPort"] = value;
@@ -176,6 +176,17 @@ namespace Rentmandu.Properties {
             }
             set {
                 this["License"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection EmailTemplates {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["EmailTemplates"]));
+            }
+            set {
+                this["EmailTemplates"] = value;
             }
         }
     }

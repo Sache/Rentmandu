@@ -24,10 +24,10 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="EmailServer" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">smtp.gmail.com</Value>
     </Setting>
-    <Setting Name="EmailPort" Type="System.String" Scope="User">
-      <Value Profile="(Default)">25</Value>
+    <Setting Name="EmailPort" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">465</Value>
     </Setting>
     <Setting Name="EmailSSL" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
@@ -39,6 +39,9 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="License" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="EmailTemplates" Type="System.Collections.Specialized.StringCollection" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

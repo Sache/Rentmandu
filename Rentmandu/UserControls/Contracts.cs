@@ -16,5 +16,10 @@ namespace Rentmandu.UserControls
         {
             InitializeComponent();
         }
+
+        private void contactsEditBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

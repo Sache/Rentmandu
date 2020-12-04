@@ -103,7 +103,7 @@ namespace Rentmandu
             {
                 MySqlConnection myConnection = GetConnection();
                 MySqlCommand dbCommand = new MySqlCommand();
-                dbCommand.CommandText = $"UPDATE tblcontacts SET Name = '{Name}', Mobile = '{Mobile}', Landline = '{Landline}', Email = '{Email}', CitizenshipNo = '{CitizenshipNo}', CZPIssueDistrict = '{IssueDistrict}', CZPIssueDate = '{IssueDate}'  WHERE ContactID = {contactID}"; // command to instert trainlines
+                dbCommand.CommandText = $"UPDATE tblcontacts SET Name = '{Name}', Mobile = '{Mobile}', Landline = '{Landline}', Email = '{Email}', CitizenshipNo = '{CitizenshipNo}', CZPIssueDistrict = '{IssueDistrict}', CZPIssueDate = '{IssueDate}'  WHERE ContactID = {contactID}"; // command to instert  
                 dbCommand.Connection = myConnection;
                 myConnection.Open();
                 dbCommand.ExecuteNonQuery();
@@ -113,13 +113,14 @@ namespace Rentmandu
             {
                 return "ERROR: " + ex;
             }
-            return "Business details updated successfully.";
+            return "Contact updated successfully.";
         }
 
-        public DataTable PopulateContactsGridView(string Name = null)
+        public DataTable PopulateContacts()
         {
             MySqlConnection myConnection = GetConnection();
-            string query = "SELECT * FROM tblcontacts ORDER BY ContactID DESC";
+            string query = "SELECT ContactID, Name, Mobile, Landline, Email, CitizenshipNo, CZPIssueDistrict, CZPIssueDate " +
+                "FROM tblcontacts WHERE BusinessType IS NULL ORDER BY ContactID DESC";
             MySqlCommand command = new MySqlCommand(query, myConnection);
             command.Connection = myConnection;
             try
@@ -182,95 +183,12 @@ namespace Rentmandu
             return null;
         }
 
-        public string AddBusiness(string Name, string Type, Int64 Mobile, Int64 Landline, string Email, Int64 PAN)
-        {
-            try
-            {
-                MySqlConnection myConnection = GetConnection();
-                MySqlCommand dbCommand = new MySqlCommand();
-                dbCommand.CommandText = "insert into tblbusiness (Name,Type,Mobile,Landline,Email,PAN) values (?,?,?,?,?,?)"; // command to instert trainlines
-                dbCommand.Parameters.AddWithValue("@Name", Name);
-                dbCommand.Parameters.AddWithValue("@Type", Type);
-                dbCommand.Parameters.AddWithValue("@Mobile", Mobile);
-                dbCommand.Parameters.AddWithValue("@Landline", Landline);
-                dbCommand.Parameters.AddWithValue("@Email", Email);
-                dbCommand.Parameters.AddWithValue("@PAN", PAN);
-                dbCommand.Connection = myConnection;
-                myConnection.Open();
-                dbCommand.ExecuteNonQuery();
-                myConnection.Close();
-            }
-            catch (Exception ex)
-            {
-                return "ERROR: " + ex;
-            }
-            return "Contact successfully added.";
-        }
-
-        public string UpdateBusiness(int ClientID, string Name, string Type, Int64 Mobile, Int64 Landline, string Email, Int64 PAN)
-        {
-            try
-            {
-                MySqlConnection myConnection = GetConnection();
-                MySqlCommand dbCommand = new MySqlCommand();
-                dbCommand.CommandText = $"UPDATE tblbusiness SET Name = '{Name}', Type = '{Type}', Mobile = '{Mobile}', Landline = '{Landline}', Email = '{Email}', PAN = '{PAN}' WHERE ClientID = {ClientID}"; // command to instert trainlines
-                dbCommand.Connection = myConnection;
-                myConnection.Open();
-                dbCommand.ExecuteNonQuery();
-                myConnection.Close();
-            }
-            catch (Exception ex)
-            {
-                return "ERROR: " + ex;
-            }
-            return "Business details updated successfully.";
-        }
-
-
-        public string DeleteBusiness(int ClientID)
-        {
-            try
-            {
-                MySqlConnection myConnection = GetConnection();
-                MySqlCommand dbCommand = new MySqlCommand();
-                dbCommand.CommandText = $"DELETE FROM tblbusiness WHERE ClientID = {ClientID}"; // command to instert trainlines
-                dbCommand.Connection = myConnection;
-                myConnection.Open();
-                dbCommand.ExecuteNonQuery();
-                myConnection.Close();
-            }
-            catch (Exception ex)
-            {
-                return "ERROR: " + ex;
-            }
-            return "Business deleted successfully.";
-        }
-
-        public string DeleteContact(int ContactID)
-        {
-            try
-            {
-                MySqlConnection myConnection = GetConnection();
-                MySqlCommand dbCommand = new MySqlCommand();
-                dbCommand.CommandText = $"DELETE FROM tblcontacts WHERE ContactID = {ContactID}"; // command to instert trainlines
-                dbCommand.Connection = myConnection;
-                myConnection.Open();
-                dbCommand.ExecuteNonQuery();
-                myConnection.Close();
-            }
-            catch (Exception ex)
-            {
-                return "ERROR: " + ex;
-            }
-            return "Contact deleted successfully.";
-        }
-
-
-
-        public DataTable PopulateBusinessGridView()
+        public DataTable GetProperty(int contactID)
         {
             MySqlConnection myConnection = GetConnection();
-            string query = "SELECT * FROM tblbusiness ORDER BY ClientID DESC";
+
+            string query = $"SELECT PropertyID,tblproperty.Name,Type,Location,Notes, tblcontacts.Name AS Owner FROM tblproperty INNER JOIN " +
+                $"tblcontacts ON tblcontacts.ContactID = tblproperty.OwnerID WHERE PropertyID = {contactID} ORDER BY PropertyID DESC";
             MySqlCommand command = new MySqlCommand(query, myConnection);
             command.Connection = myConnection;
             try
@@ -287,6 +205,177 @@ namespace Rentmandu
                 Console.WriteLine("Error:" + e);
             }
             return null;
+        }
+
+        public string AddBusiness(string Name, string Type, Int64 Mobile, Int64 Landline, string Email, Int64 PAN)
+        {
+            try
+            {
+                MySqlConnection myConnection = GetConnection();
+                MySqlCommand dbCommand = new MySqlCommand();
+                dbCommand.CommandText = "INSERT INTO tblcontacts (Name,BusinessType,Mobile,Landline,Email,PAN) values (?,?,?,?,?,?)"; // command to instert  
+                dbCommand.Parameters.AddWithValue("@Name", Name);
+                dbCommand.Parameters.AddWithValue("@BusinessType", Type);
+                dbCommand.Parameters.AddWithValue("@Mobile", Mobile);
+                dbCommand.Parameters.AddWithValue("@Landline", Landline);
+                dbCommand.Parameters.AddWithValue("@Email", Email);
+                dbCommand.Parameters.AddWithValue("@PAN", PAN);
+                dbCommand.Connection = myConnection;
+                myConnection.Open();
+                dbCommand.ExecuteNonQuery();
+                myConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                return "ERROR: " + ex;
+            }
+            return "Business successfully added.";
+        }
+
+        public string UpdateBusiness(int ClientID, string Name, string Type, Int64 Mobile, Int64 Landline, string Email, Int64 PAN)
+        {
+            try
+            {
+                MySqlConnection myConnection = GetConnection();
+                MySqlCommand dbCommand = new MySqlCommand();
+                dbCommand.CommandText = $"UPDATE tblcontacts SET Name = '{Name}', BusinessType = '{Type}', Mobile = '{Mobile}', Landline = '{Landline}', Email = '{Email}', PAN = '{PAN}' WHERE ContactID = {ClientID}"; // command to instert  
+                dbCommand.Connection = myConnection;
+                myConnection.Open();
+                dbCommand.ExecuteNonQuery();
+                myConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                return "ERROR: " + ex;
+            }
+            return "Business details updated successfully.";
+        }
+
+        public string DeleteContact(int ContactID)
+        {
+            try
+            {
+                MySqlConnection myConnection = GetConnection();
+                MySqlCommand dbCommand = new MySqlCommand();
+                dbCommand.CommandText = $"DELETE FROM tblcontacts WHERE ContactID = {ContactID}"; // command to instert  
+                dbCommand.Connection = myConnection;
+                myConnection.Open();
+                dbCommand.ExecuteNonQuery();
+                myConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                return "ERROR: " + ex;
+            }
+            return "Contact deleted successfully.";
+        }
+
+        public DataTable PopulateBusiness()
+        {
+            MySqlConnection myConnection = GetConnection();
+            string query = "SELECT ContactID, Name, Mobile, Landline, Email, BusinessType, PAN  FROM tblcontacts WHERE BusinessType IS NOT NULL ORDER BY ContactID DESC";
+            MySqlCommand command = new MySqlCommand(query, myConnection);
+            command.Connection = myConnection;
+            try
+            {
+                myConnection.Open();
+                MySqlDataAdapter reader = new MySqlDataAdapter(command); //read data from the database
+                DataTable dataTable = new DataTable();
+                reader.Fill(dataTable);
+                myConnection.Close();
+                return dataTable;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error:" + e);
+            }
+            return null;
+        }
+
+
+        public DataTable PopulatePropertyGridView()
+        {
+            MySqlConnection myConnection = GetConnection();       
+            string query = "SELECT PropertyID,tblproperty.Name,Type,Location,Notes, tblcontacts.Name AS Owner FROM tblproperty INNER JOIN " +
+                "tblcontacts ON tblcontacts.ContactID = tblproperty.OwnerID ORDER BY PropertyID DESC";
+            MySqlCommand command = new MySqlCommand(query, myConnection);
+            command.Connection = myConnection;
+            try
+            {
+                myConnection.Open();
+                MySqlDataAdapter reader = new MySqlDataAdapter(command); //read data from the database
+                DataTable dataTable = new DataTable();
+                reader.Fill(dataTable);
+                myConnection.Close();
+                return dataTable;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error:" + e);
+            }
+            return null;
+        }
+
+        public string DeleteProperty(int propertyID)
+        {
+            try
+            {
+                MySqlConnection myConnection = GetConnection();
+                MySqlCommand dbCommand = new MySqlCommand();
+                dbCommand.CommandText = $"DELETE FROM tblcontacts WHERE PropertyID = {propertyID}"; // command to instert  
+                dbCommand.Connection = myConnection;
+                myConnection.Open();
+                dbCommand.ExecuteNonQuery();
+                myConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                return "ERROR: " + ex;
+            }
+            return "Property deleted successfully.";
+        }
+
+        public string AddProperty(string Name, string Type, string Location, string Notes, int Owner)
+        {
+            try
+            {
+                MySqlConnection myConnection = GetConnection();
+                MySqlCommand dbCommand = new MySqlCommand();
+                dbCommand.CommandText = "INSERT INTO tblproperty (Name,Type,Location,Notes,OwnerID) values (?,?,?,?,?)"; 
+                dbCommand.Parameters.AddWithValue("@Name", Name);
+                dbCommand.Parameters.AddWithValue("@Type", Type);
+                dbCommand.Parameters.AddWithValue("@Location", Location);
+                dbCommand.Parameters.AddWithValue("@Notes", Notes);
+                dbCommand.Parameters.AddWithValue("@OwnerID", Owner);
+                dbCommand.Connection = myConnection;
+                myConnection.Open();
+                dbCommand.ExecuteNonQuery();
+                myConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                return "ERROR: " + ex;
+            }
+            return "Property successfully added.";
+        }
+
+        public string UpdateProperty(int propertyID , string Name, string Type, string Location, string Notes, int Owner)
+        {
+            try
+            {
+                MySqlConnection myConnection = GetConnection();
+                MySqlCommand dbCommand = new MySqlCommand();
+                dbCommand.CommandText = $"UPDATE tblproperty SET Name = '{Name}', Type = '{Type}', Location = '{Location}', Notes = '{Notes}', OwnerID = '{Owner}' WHERE ContactID = {propertyID}";
+                dbCommand.Connection = myConnection;
+                myConnection.Open();
+                dbCommand.ExecuteNonQuery();
+                myConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                return "ERROR: " + ex;
+            }
+            return "Property updated successfully.";
         }
     }
 }

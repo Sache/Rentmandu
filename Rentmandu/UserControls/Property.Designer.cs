@@ -29,48 +29,51 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Property));
-            this.addContactBtn = new System.Windows.Forms.Button();
-            this.contactsEditBtn = new System.Windows.Forms.Button();
-            this.deleteContactsBtn = new System.Windows.Forms.Button();
+            this.addPropertyBtn = new System.Windows.Forms.Button();
+            this.editPropertyBtn = new System.Windows.Forms.Button();
+            this.deletePropertyBtn = new System.Windows.Forms.Button();
             this.propertyGrpBx = new System.Windows.Forms.GroupBox();
             this.propertyGridView = new System.Windows.Forms.DataGridView();
             this.propertyGrpBx.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.propertyGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // addContactBtn
+            // addPropertyBtn
             // 
-            this.addContactBtn.Image = ((System.Drawing.Image)(resources.GetObject("addContactBtn.Image")));
-            this.addContactBtn.Location = new System.Drawing.Point(476, 21);
-            this.addContactBtn.Name = "addContactBtn";
-            this.addContactBtn.Size = new System.Drawing.Size(46, 47);
-            this.addContactBtn.TabIndex = 30;
-            this.addContactBtn.UseVisualStyleBackColor = true;
+            this.addPropertyBtn.Image = ((System.Drawing.Image)(resources.GetObject("addPropertyBtn.Image")));
+            this.addPropertyBtn.Location = new System.Drawing.Point(476, 21);
+            this.addPropertyBtn.Name = "addPropertyBtn";
+            this.addPropertyBtn.Size = new System.Drawing.Size(46, 47);
+            this.addPropertyBtn.TabIndex = 30;
+            this.addPropertyBtn.UseVisualStyleBackColor = true;
+            this.addPropertyBtn.Click += new System.EventHandler(this.addPropertyBtn_Click);
             // 
-            // contactsEditBtn
+            // editPropertyBtn
             // 
-            this.contactsEditBtn.Image = global::Rentmandu.Properties.Resources.edit;
-            this.contactsEditBtn.Location = new System.Drawing.Point(528, 21);
-            this.contactsEditBtn.Name = "contactsEditBtn";
-            this.contactsEditBtn.Size = new System.Drawing.Size(46, 47);
-            this.contactsEditBtn.TabIndex = 31;
-            this.contactsEditBtn.UseVisualStyleBackColor = true;
+            this.editPropertyBtn.Image = global::Rentmandu.Properties.Resources.edit;
+            this.editPropertyBtn.Location = new System.Drawing.Point(528, 21);
+            this.editPropertyBtn.Name = "editPropertyBtn";
+            this.editPropertyBtn.Size = new System.Drawing.Size(46, 47);
+            this.editPropertyBtn.TabIndex = 31;
+            this.editPropertyBtn.UseVisualStyleBackColor = true;
+            this.editPropertyBtn.Click += new System.EventHandler(this.editPropertyBtn_Click);
             // 
-            // deleteContactsBtn
+            // deletePropertyBtn
             // 
-            this.deleteContactsBtn.Image = global::Rentmandu.Properties.Resources.minus;
-            this.deleteContactsBtn.Location = new System.Drawing.Point(580, 21);
-            this.deleteContactsBtn.Name = "deleteContactsBtn";
-            this.deleteContactsBtn.Size = new System.Drawing.Size(46, 47);
-            this.deleteContactsBtn.TabIndex = 32;
-            this.deleteContactsBtn.UseVisualStyleBackColor = true;
+            this.deletePropertyBtn.Image = global::Rentmandu.Properties.Resources.minus;
+            this.deletePropertyBtn.Location = new System.Drawing.Point(580, 21);
+            this.deletePropertyBtn.Name = "deletePropertyBtn";
+            this.deletePropertyBtn.Size = new System.Drawing.Size(46, 47);
+            this.deletePropertyBtn.TabIndex = 32;
+            this.deletePropertyBtn.UseVisualStyleBackColor = true;
+            this.deletePropertyBtn.Click += new System.EventHandler(this.deletePropertyBtn_Click);
             // 
             // propertyGrpBx
             // 
             this.propertyGrpBx.Controls.Add(this.propertyGridView);
-            this.propertyGrpBx.Controls.Add(this.deleteContactsBtn);
-            this.propertyGrpBx.Controls.Add(this.contactsEditBtn);
-            this.propertyGrpBx.Controls.Add(this.addContactBtn);
+            this.propertyGrpBx.Controls.Add(this.deletePropertyBtn);
+            this.propertyGrpBx.Controls.Add(this.editPropertyBtn);
+            this.propertyGrpBx.Controls.Add(this.addPropertyBtn);
             this.propertyGrpBx.Location = new System.Drawing.Point(3, 3);
             this.propertyGrpBx.Name = "propertyGrpBx";
             this.propertyGrpBx.Size = new System.Drawing.Size(1105, 643);
@@ -84,7 +87,7 @@
             this.propertyGridView.AllowUserToDeleteRows = false;
             this.propertyGridView.AllowUserToResizeColumns = false;
             this.propertyGridView.AllowUserToResizeRows = false;
-            this.propertyGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.propertyGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.propertyGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.propertyGridView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.propertyGridView.Location = new System.Drawing.Point(6, 74);
@@ -114,9 +117,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button addContactBtn;
-        private System.Windows.Forms.Button contactsEditBtn;
-        private System.Windows.Forms.Button deleteContactsBtn;
+        private System.Windows.Forms.Button addPropertyBtn;
+        private System.Windows.Forms.Button editPropertyBtn;
+        private System.Windows.Forms.Button deletePropertyBtn;
         private System.Windows.Forms.GroupBox propertyGrpBx;
         private System.Windows.Forms.DataGridView propertyGridView;
     }

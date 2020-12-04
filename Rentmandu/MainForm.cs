@@ -16,12 +16,19 @@ namespace Rentmandu
         Contacts contact = null;
         LogsInfo logs = null;
         Contracts contracts = null;
+        Property property = null;
+        Email email = null;
         public MainForm()
         {
             InitializeComponent();
 
 
         }
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void contactsBtn_Click(object sender, EventArgs e)
         {
             if (mainPanel.Controls.ContainsKey("Contacts"))
@@ -45,7 +52,7 @@ namespace Rentmandu
 
         }
 
-        private void propertyButton_Click(object sender, EventArgs e)
+        private void contractsButton_Click(object sender, EventArgs e)
         {
             if (mainPanel.Controls.ContainsKey("Contracts"))
                 mainPanel.Controls.Remove(contracts);
@@ -54,6 +61,34 @@ namespace Rentmandu
             mainPanel.Controls.Add(contracts);
             contracts.BringToFront();
             contracts.Visible = true;
+
+        }
+
+        private void propertyBtn_Click(object sender, EventArgs e)
+        {
+            if (mainPanel.Controls.ContainsKey("Property"))
+                mainPanel.Controls.Remove(property);
+
+            property = new Property();
+            mainPanel.Controls.Add(property);
+            property.BringToFront();
+            property.Visible = true;
+        }
+
+        private void paymentsBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void emailBtn_Click(object sender, EventArgs e)
+        {
+            if (mainPanel.Controls.ContainsKey("Email"))
+                mainPanel.Controls.Remove(email);
+
+            email = new Email();
+            mainPanel.Controls.Add(email);
+            email.BringToFront();
+            email.Visible = true;
 
         }
     }
